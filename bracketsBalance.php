@@ -1,6 +1,6 @@
 <?php
 
-	if(in_array('-h', $argv) || !isset($argv[1])) {
+	if(in_array('-h', $argv) || in_array('--help', $argv) || !isset($argv[1])) {
 		die ("Usage: php ".basename(__FILE__)." -i=\"<input string>\"\n");
 	}
 
