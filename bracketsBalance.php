@@ -17,10 +17,9 @@
 		if ($params[0] == '-i') {
 			$input = (string)$params[1];
 			$reg = preg_replace('/[^(){}\[\]]/s', '', $input);
+			if ($reg == '') die("No brackets found!\n");
 			$strlen = strlen($reg);
 			$symbolsArr = [];
-			// echo "string: " . $input . "\n";
-			// echo "braces only: " . $reg . "\n";
 
 			for($i = 0; $i < $strlen; $i++) {
 				switch ($reg[$i]) {
@@ -43,7 +42,7 @@
 						break;
 				}
 			}
-			echo (count($symbolsArr) > 0 || !$result) ? "Не верно!\n" : "Верно!\n";
+			echo (count($symbolsArr) > 0 || !$result) ? "Wrong!\n" : "Correct!\n";
 		} else {
 			echo "unknown parameter " . $params[0] . "\n";
 		}
