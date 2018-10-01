@@ -2,4 +2,4 @@
 script which checks if brackets are closed in right order
 
 
-php bracketsBalance.php -i="<input string>"
+php bracketsBalance.php -i="\<input string\>"
