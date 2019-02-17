@@ -23,10 +23,10 @@
 
 			for($i = 0; $i < $strlen; $i++) {
 				switch ($reg[$i]) {
-					case (in_array($reg[$i], ['{', '(', '['])):
+					case (in_array($reg[$i], array_flip($pairs))):
 						$symbolsArr[] = $reg[$i];
 						break;
-					case (in_array($reg[$i], ['}', ')', ']'])):
+					case (in_array($reg[$i], $pairs)):
 						$key = end(array_keys($symbolsArr));
 						$pair = $pairs[$symbolsArr[$key]];
 						if ($pair == $reg[$i]) {
